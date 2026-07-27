@@ -22,7 +22,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddTransient<OllamaApiClient>(x => new OllamaApiClient(
     uriString: "http://localhost:11434",
-    defaultModel: "mxbai-embed-large"
+    // qualidade de output depende do modelo, n inventa de modelo 300m 
+    defaultModel: "qwen3-embedding:4b"
 ));
 
 var app = builder.Build();

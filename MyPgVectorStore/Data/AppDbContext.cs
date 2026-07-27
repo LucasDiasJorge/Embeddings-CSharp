@@ -19,7 +19,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             entity.Property(x => x.Id).HasColumnName("id").UseIdentityAlwaysColumn();
             entity.Property(e => e.Title).HasColumnName("title");
             entity.Property(e => e.Category).HasColumnName("category");
-            entity.Property(e => e.Embedding).HasColumnName("embedding").HasColumnType("vector(1024)");
+            entity.Property(e => e.Embedding).HasColumnName("embedding").HasColumnType("vector(2560)");
         });
         modelBuilder.Entity<Product>(entity =>
         {
