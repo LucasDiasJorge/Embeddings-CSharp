@@ -17,9 +17,11 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             entity.ToTable("recomendations");
             entity.HasKey(x => x.Id);
             entity.Property(x => x.Id).HasColumnName("id").UseIdentityAlwaysColumn();
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Title).HasColumnName("title");
             entity.Property(e => e.Category).HasColumnName("category");
             entity.Property(e => e.Embedding).HasColumnName("embedding").HasColumnType("vector(2560)");
+            entity.HasOne<Product>().WithMany().HasForeignKey(e => e.ProductId);
         });
         modelBuilder.Entity<Product>(entity =>
         {
