@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    O hexágono. Este projeto NÃO referencia nada: nem EF Core, nem ASP.NET, nem Ollama.
+    Se algum dia um `using Microsoft.EntityFrameworkCore` aparecer aqui, o build quebra —
+    é essa a garantia que a separação em projetos compra.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
